@@ -39,10 +39,10 @@ p {
 }
 
 .photo-container {
-    width: 73%;
-    margin: auto;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 50px;
     padding-bottom: 50px;
 }
