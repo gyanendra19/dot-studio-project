@@ -1,0 +1,247 @@
+@font-face {
+    font-family: myFontOne;
+    src: url('./gotham/GothamBold.ttf');
+}
+
+@font-face {
+    font-family: myFontTwo;
+    src: url('./gotham/GothamMedium.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.why {
+    color: rgb(65, 82, 160);
+}
+
+p {
+    font-family: myFontOne;
+    padding: 40px 0;
+    ;
+    text-align: center;
+    width: 50%;
+    font-size: 35px;
+    margin: auto;
+}
+
+.photo-container {
+    width: 68%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.image-one,
+.image-two,
+.image-three,
+.image-four {
+    position: relative;
+    border-radius: 6px;
+    width: 480px;
+    height: 300px;
+    object-fit: fill;
+    overflow: hidden;
+    transition: all;
+}
+
+.blur-photo {
+    filter: blur(2px);
+}
+
+.gradient-common::before {
+    position: absolute;
+    content: '';
+    background: linear-gradient(180deg, rgba(246, 248, 250, 0.01) 0%, rgba(40, 40, 41, 0.8) 85%);
+    z-index: 200;
+    width: 100%;
+    height: 150px;
+    bottom: 4px;
+    border-radius: 6px;
+}
+
+.hover-above {
+    position: absolute;
+    background-color: rgb(248, 36, 72);
+    width: 100%;
+    height: 86%;
+    top: 15px;
+    left: 0;
+    opacity: 0.7;
+    overflow: hidden;
+    z-index: 1200;
+    display: none;
+    transition: all 0.3s;
+    transform: scale(0);
+}
+
+.animate-box-out {
+    transition: all;
+    transform-origin: bottom left;
+    animation: hoverboxout 0.3s ease-out forwards;
+    display: block;
+}
+
+.animate-box {
+    transform-origin: left bottom;
+    animation: hoverbox 0.3s ease-out forwards;
+    display: block;
+}
+
+.hover-para--one {
+    margin-top: 20%;
+    margin-bottom: 17px;
+    width: 90%;
+    opacity: 0;
+    transform: translateY(20px);
+    font-size: 23px;
+    color: white;
+    padding: 0;
+    animation: paraup 0.3s linear 0.3s forwards;
+}
+
+.hover-para--two {
+    color: white;
+    width: 95%;
+    opacity: 0;
+    transform: translateY(28px);
+    letter-spacing: 1px;
+    line-height: 20px;
+    font-family: myFontTwo;
+    font-size: 15px;
+    padding: 0;
+    animation: paraup 0.3s linear 0.4s forwards;
+}
+
+/* .gradient-common::after{
+    content: 'Holistic Development';
+    position: absolute;
+    font-size: 25px;
+    color: white;
+    font-family: myFontOne;
+    width: 100%;
+    height: 86%;
+    top: 15px;
+    left: 0;
+    background-color: rgb(163, 26, 26);
+    opacity: 0.8;
+    z-index: 1200;
+    backdrop-filter: 20px;
+} */
+
+.first-pic,
+.second-pic,
+.third-pic,
+.fourth-pic {
+    position: relative;
+}
+
+.photo-container span {
+    color: rgb(252, 99, 99);
+}
+
+#first-para {
+    top: 13.5rem;
+}
+
+.box-title {
+    position: absolute;
+    top: 12rem;
+    color: white;
+    letter-spacing: 0.8px;
+    left: 5rem;
+    width: 70%;
+    z-index: 1000;
+    font-family: myFontOne;
+    line-height: 28px;
+    font-size: 22px;
+    transition: all;
+}
+
+.box-title-hide {
+    display: none;
+}
+
+@keyframes paraup {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hoverbox {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes hoverboxout {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .photo-container {
+        flex-direction: column;
+        margin: 0;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .image-one,.image-two,
+    .image-three,.image-four{
+        width: 100%;
+        height: 30%;
+    }
+
+    .main > p{
+        font-size: 20px;
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
+
+    .box-title{
+        top: 57%;
+        font-size: 14px;
+        left: 1rem;
+        width: 90%;
+        line-height: 14px;
+    }
+
+    #first-para {
+        top: 62%;
+    }
+
+    .hover-para--one{
+        font-size: 18px;
+    }
+
+    .hover-para--two{
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
