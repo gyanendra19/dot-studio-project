@@ -39,6 +39,7 @@ const secondClass = () => {
 
 window.onscroll = () => {
         let top = window.scrollY;
+        console.log(top, window.innerHeight);
         
         if(window.innerWidth > 720) return
         if(top > 0 && top < 120){
@@ -75,7 +76,7 @@ window.onscroll = () => {
             allImages[2].classList.remove('blur-photo')
             boxTitle[2].classList.remove('box-title-hide')
         }
-        if(top > 360){
+        if ((window.innerHeight + Math.round(top)) >= document.body.offsetHeight){
             hoverAbove[3].classList.add('animate-box')
             hoverAbove[3].classList.remove('animate-box-out')
             allImages[3].classList.add('blur-photo')
