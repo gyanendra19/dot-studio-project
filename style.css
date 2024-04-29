@@ -39,7 +39,7 @@ p {
 }
 
 .photo-container {
-    width: 72%;
+    width: 80%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
