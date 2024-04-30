@@ -30,8 +30,7 @@ body {
 
 p {
     font-family: myFontOne;
-    padding: 40px 0;
-    ;
+    padding: 40px 0;;
     text-align: center;
     width: 50%;
     font-size: 35px;
@@ -222,6 +221,7 @@ p {
         font-size: 20px;
         box-sizing: border-box;
         white-space: nowrap;
+        /* padding: 25px 0;; */
     }
 
     .box-title{

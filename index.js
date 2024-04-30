@@ -40,33 +40,35 @@ const secondClass = (index) => {
 
 window.onscroll = () => {
         let top = window.scrollY;
-        console.log(top, window.innerHeight);
-        
-        if(window.innerWidth > 720) return
+         if(window.innerWidth > 720) return;
 
         if(top > 0 && top < 120){
             firstClass(0)
-        }else{
-           secondClass(0)
+        }
+        else if(this.oldScroll > this.scrollY){
+           secondClass(1)
         }
 
         if(top > 120 && top < 240){
+            secondClass(0)
             firstClass(1)
-        }else{
-            secondClass(1)
         }
+        else if(this.oldScroll > this.scrollY){
+            secondClass(2)
+         }
 
         if(top > 240 && top < 360){
+            secondClass(1)
             firstClass(2)
-        }else{
-           secondClass(2)
-        }
+            }
+            else if(this.oldScroll > this.scrollY){
+                secondClass(3)
+             }
         
-        if ((window.innerHeight + Math.round(top)) >= document.body.offsetHeight){
+        if((window.innerHeight + Math.round(top)) >= document.body.offsetHeight){
+            secondClass(2)
             firstClass(3)
-        }else{
-            secondClass(3)
         }
-
+        this.oldScroll = this.scrollY
     }
 
