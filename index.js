@@ -24,18 +24,22 @@ hoverBox.forEach((hover, i) => {
 })
 
 const firstClass = () => {
-    return  hoverAbove[0].classList.add('animate-box')
-    hoverAbove[0].classList.remove('animate-box-out')
-    allImages[0].classList.add('blur-photo')
+    return  hoverAbove[0].classList.add('animate-box'),
+    hoverAbove[0].classList.remove('animate-box-out'),
+    allImages[0].classList.add('blur-photo'),
     boxTitle[0].classList.add('box-title-hide')
 }
 
 const secondClass = () => {
-    return  hoverAbove[0].classList.add('animate-box')
-    hoverAbove[0].classList.remove('animate-box-out')
-    allImages[0].classList.add('blur-photo')
+    return [
+    hoverAbove[0].classList.add('animate-box'),
+    hoverAbove[0].classList.remove('animate-box-out'),
+    allImages[0].classList.add('blur-photo'),
     boxTitle[0].classList.add('box-title-hide')
+    ]
 }
+
+console.log(secondClass());
 
 window.onscroll = () => {
         let top = window.scrollY;
