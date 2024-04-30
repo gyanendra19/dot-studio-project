@@ -39,7 +39,6 @@ const secondClass = () => {
     ]
 }
 
-console.log(secondClass());
 
 window.onscroll = () => {
         let top = window.scrollY;
