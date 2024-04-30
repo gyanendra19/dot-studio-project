@@ -23,20 +23,18 @@ hoverBox.forEach((hover, i) => {
     })
 })
 
-const firstClass = () => {
-    return  hoverAbove[0].classList.add('animate-box'),
-    hoverAbove[0].classList.remove('animate-box-out'),
-    allImages[0].classList.add('blur-photo'),
-    boxTitle[0].classList.add('box-title-hide')
+const firstClass = (index) => {
+    hoverAbove[index].classList.add('animate-box'),
+    hoverAbove[index].classList.remove('animate-box-out'),
+    allImages[index].classList.add('blur-photo'),
+    boxTitle[index].classList.add('box-title-hide')
 }
 
-const secondClass = () => {
-    return [
-    hoverAbove[0].classList.add('animate-box'),
-    hoverAbove[0].classList.remove('animate-box-out'),
-    allImages[0].classList.add('blur-photo'),
-    boxTitle[0].classList.add('box-title-hide')
-    ]
+const secondClass = (index) => {
+    hoverAbove[index].classList.add('animate-box'),
+    hoverAbove[index].classList.remove('animate-box-out'),
+    allImages[index].classList.add('blur-photo'),
+    boxTitle[index].classList.add('box-title-hide')
 }
 
 
@@ -45,50 +43,29 @@ window.onscroll = () => {
         console.log(top, window.innerHeight);
         
         if(window.innerWidth > 720) return
+
         if(top > 0 && top < 120){
-            hoverAbove[0].classList.add('animate-box')
-            hoverAbove[0].classList.remove('animate-box-out')
-            allImages[0].classList.add('blur-photo')
-            boxTitle[0].classList.add('box-title-hide')
+            firstClass(0)
         }else{
-            hoverAbove[0].classList.remove('animate-box')
-            hoverAbove[0].classList.add('animate-box-out')
-            allImages[0].classList.remove('blur-photo')
-            boxTitle[0].classList.remove('box-title-hide')
+           secondClass(0)
         }
 
         if(top > 120 && top < 240){
-            hoverAbove[1].classList.add('animate-box')
-            hoverAbove[1].classList.remove('animate-box-out')
-            allImages[1].classList.add('blur-photo')
-            boxTitle[1].classList.add('box-title-hide')
+            firstClass(1)
         }else{
-            hoverAbove[1].classList.remove('animate-box')
-            hoverAbove[1].classList.add('animate-box-out')
-            allImages[1].classList.remove('blur-photo')
-            boxTitle[1].classList.remove('box-title-hide')
+            secondClass(1)
         }
+
         if(top > 240 && top < 360){
-            hoverAbove[2].classList.add('animate-box')
-            hoverAbove[2].classList.remove('animate-box-out')
-            allImages[2].classList.add('blur-photo')
-            boxTitle[2].classList.add('box-title-hide')
+            firstClass(2)
         }else{
-            hoverAbove[2].classList.remove('animate-box')
-            hoverAbove[2].classList.add('animate-box-out')
-            allImages[2].classList.remove('blur-photo')
-            boxTitle[2].classList.remove('box-title-hide')
+           secondClass(2)
         }
+        
         if ((window.innerHeight + Math.round(top)) >= document.body.offsetHeight){
-            hoverAbove[3].classList.add('animate-box')
-            hoverAbove[3].classList.remove('animate-box-out')
-            allImages[3].classList.add('blur-photo')
-            boxTitle[3].classList.add('box-title-hide')
+            firstClass(3)
         }else{
-            hoverAbove[3].classList.remove('animate-box')
-            hoverAbove[3].classList.add('animate-box-out')
-            allImages[3].classList.remove('blur-photo')
-            boxTitle[3].classList.remove('box-title-hide')
+            secondClass(3)
         }
 
     }
