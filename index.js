@@ -31,10 +31,10 @@ const firstClass = (index) => {
 }
 
 const secondClass = (index) => {
-    hoverAbove[index].classList.add('animate-box'),
-    hoverAbove[index].classList.remove('animate-box-out'),
-    allImages[index].classList.add('blur-photo'),
-    boxTitle[index].classList.add('box-title-hide')
+    hoverAbove[index].classList.remove('animate-box'),
+    hoverAbove[index].classList.add('animate-box-out'),
+    allImages[index].classList.remove('blur-photo'),
+    boxTitle[index].classList.remove('box-title-hide')
 }
 
 
